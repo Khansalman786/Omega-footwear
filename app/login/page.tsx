@@ -40,7 +40,7 @@ const Login = () => {
     e.preventDefault();
     if (!email || !password) return;
     setSubmitting(true);
-    const res = await login(email, password);
+     await login(email, password);
     setSubmitting(false);
     // if (!res.error) navigate("/");
   };
