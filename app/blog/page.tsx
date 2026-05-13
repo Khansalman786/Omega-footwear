@@ -2,7 +2,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Clock, ArrowRight, Tag } from "lucide-react";
+import { Clock } from "lucide-react";
 
 const posts = [
   {
