@@ -97,9 +97,7 @@ const HeroSlider = () => {
           <img
             src={s.image}
             alt={s.title}
-            // First slide is the LCP — load eagerly with high priority. Others lazy.
             loading={i === 0 ? "eager" : "lazy"}
-            // @ts-expect-error fetchPriority is a valid HTML attr but typings lag
             fetchPriority={i === 0 ? "high" : "low"}
             decoding={i === 0 ? "sync" : "async"}
             className="w-full h-full object-cover"
