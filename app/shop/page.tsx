@@ -15,7 +15,6 @@ import { findCategoryBySlug, slugify } from "@/lib/slug";
 
 import { Search } from "lucide-react";
 
-const SITE_URL = "https://yourdomain.com";
 const ALL_CATEGORIES = Object.keys(subcategories);
 
 const ShopPage = () => {
