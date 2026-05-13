@@ -34,7 +34,6 @@ const Login = () => {
   const [showPw, setShowPw] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const { login, loginWithGoogle } = useStore();
-  // const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,7 +41,6 @@ const Login = () => {
     setSubmitting(true);
      await login(email, password);
     setSubmitting(false);
-    // if (!res.error) navigate("/");
   };
 
   return (

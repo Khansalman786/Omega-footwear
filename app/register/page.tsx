@@ -23,7 +23,6 @@ const Register = () => {
   const [showPw, setShowPw] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const { register, loginWithGoogle } = useStore();
-  // const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,7 +31,6 @@ const Register = () => {
     const res = await register(name, email, password);
     setSubmitting(false);
     if (!res.error) {
-      // navigate("/");
     }
   };
 
