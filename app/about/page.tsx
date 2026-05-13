@@ -1,4 +1,5 @@
 "use client";
+import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -68,7 +69,9 @@ const milestones = [
 
 const About = () => (
   <div className="min-h-screen bg-background">
-    <Navbar />
+    <Suspense fallback={<div>Loading...</div>}>
+      <Navbar />
+    </Suspense>
 
     {/* Hero */}
     <section className="relative gradient-navy py-24 md:py-32 overflow-hidden">
