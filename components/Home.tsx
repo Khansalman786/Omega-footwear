@@ -13,8 +13,8 @@ const AdvertiseBanners = dynamic(() => import("./AdvertiseBanners"), {
 const BestSellersSection = dynamic(() => import("./BestSellersSection"), {
   loading: () => <div className="h-96 bg-secondary/30 animate-pulse" />,
 });
-const BestSellersCarousel = dynamic(() => import("./BestSellersCarousel"));
-const ProductCarousel = dynamic(() => import("./ProductCarousel"));
+// const BestSellersCarousel = dynamic(() => import("./BestSellersCarousel"));
+// const ProductCarousel = dynamic(() => import("./ProductCarousel"));
 const CustomerGallery = dynamic(() => import("./CustomerGallery"), {
   loading: () => <div className="h-96 bg-secondary/30 animate-pulse" />,
 });
