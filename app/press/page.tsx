@@ -3,7 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Download, ExternalLink, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const pressReleases = [
   { date: "Feb 2026", title: "Omega Collections Launches Spring/Summer 2026 Line", excerpt: "The latest collection features 12 new styles combining sustainable materials with cutting-edge design." },
