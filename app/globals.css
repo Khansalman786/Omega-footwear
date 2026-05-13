@@ -1,26 +1,143 @@
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap");
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 220 20% 97%;
+    --foreground: 215 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 30% 12%;
+
+    --primary: 215 40% 28%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 215 15% 90%;
+    --secondary-foreground: 215 30% 12%;
+
+    --muted: 215 15% 93%;
+    --muted-foreground: 215 12% 50%;
+
+    --accent: 215 35% 40%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 20% 88%;
+    --input: 215 20% 88%;
+    --ring: 215 40% 28%;
+
+    --radius: 0.5rem;
+
+    --steel: 215 15% 72%;
+    --steel-light: 215 12% 85%;
+    --steel-dark: 215 20% 55%;
+    --navy: 215 45% 18%;
+    --copper: 15 60% 50%;
+
+    --font-display: "Playfair Display", serif;
+    --font-body: "DM Sans", sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 30% 8%;
+    --foreground: 210 40% 95%;
+    --card: 215 28% 12%;
+    --card-foreground: 210 40% 95%;
+    --popover: 215 28% 12%;
+    --popover-foreground: 210 40% 95%;
+    --primary: 215 35% 60%;
+    --primary-foreground: 215 30% 8%;
+    --secondary: 215 20% 18%;
+    --secondary-foreground: 210 40% 95%;
+    --muted: 215 20% 16%;
+    --muted-foreground: 215 15% 60%;
+    --accent: 215 30% 50%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 20% 20%;
+    --input: 215 20% 20%;
+    --ring: 215 35% 60%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .btn-hero {
+    @apply bg-primary text-primary-foreground px-8 py-3 rounded-md font-semibold tracking-wide uppercase text-sm transition-all duration-300;
+    letter-spacing: 0.15em;
+  }
+  .btn-hero:hover {
+    @apply bg-accent shadow-lg;
+    transform: translateY(-2px);
+  }
+  .btn-outline-hero {
+    @apply border-2 border-primary text-primary px-8 py-3 rounded-md font-semibold tracking-wide uppercase text-sm transition-all duration-300 bg-transparent;
+    letter-spacing: 0.15em;
+  }
+  .btn-outline-hero:hover {
+    @apply bg-primary text-primary-foreground;
+  }
+  .card-product {
+    @apply bg-card rounded-lg overflow-hidden transition-all duration-500;
+    box-shadow: 0 4px 20px -4px hsl(var(--steel) / 0.2);
+  }
+  .card-product:hover {
+    box-shadow: 0 12px 40px -8px hsl(var(--steel) / 0.35);
+    transform: translateY(-6px);
+  }
+  .gradient-steel {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--steel-light)),
+      hsl(var(--steel))
+    );
+  }
+  .gradient-navy {
+    background: linear-gradient(135deg, hsl(var(--navy)), hsl(var(--primary)));
+  }
+  .text-gradient-steel {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--steel-dark))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
