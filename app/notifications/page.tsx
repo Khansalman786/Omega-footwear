@@ -1,7 +1,8 @@
 "use client";
 
 import { useStore } from "@/context/StoreContext";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
+
 import Footer from "@/components/Footer";
 import {
   Bell,
@@ -36,7 +37,7 @@ const Notifications = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <NavbarWrapper />
       <div className="container mx-auto px-4 py-12 max-w-2xl">
         <div className="flex items-center justify-between mb-8">
           <div>

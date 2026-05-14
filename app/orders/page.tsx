@@ -3,7 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useStore } from "@/context/StoreContext";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
+
 import Footer from "@/components/Footer";
 import { Package, Clock, ChevronRight } from "lucide-react";
 
@@ -22,7 +23,7 @@ const Orders = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <NavbarWrapper />
 
       <div className="container mx-auto px-4 py-12">
         <h1 className="font-display text-4xl font-bold text-foreground mb-2">

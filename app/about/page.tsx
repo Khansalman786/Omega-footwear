@@ -1,6 +1,7 @@
 "use client";
 import { Suspense } from "react";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
+
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Heart, Award, Globe, Leaf, Target } from "lucide-react";
@@ -70,7 +71,7 @@ const milestones = [
 const About = () => (
   <div className="min-h-screen bg-background">
     <Suspense fallback={<div>Loading...</div>}>
-      <Navbar />
+      <NavbarWrapper />
     </Suspense>
 
     {/* Hero */}

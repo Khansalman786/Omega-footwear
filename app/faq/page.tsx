@@ -1,6 +1,7 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
+
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -116,7 +117,7 @@ const FAQItem = ({ q, a }: { q: string; a: string }) => {
 
 const FAQ = () => (
   <div className="min-h-screen bg-background">
-    <Navbar />
+    <NavbarWrapper />
     <section className="relative gradient-navy py-24">
       <div className="container mx-auto px-4 text-center">
         <motion.div

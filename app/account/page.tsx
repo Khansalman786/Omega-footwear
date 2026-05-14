@@ -6,25 +6,14 @@ import { useEffect } from "react";
 
 import { useStore } from "@/context/StoreContext";
 
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
+
 import Footer from "@/components/Footer";
 
-import {
-  User,
-  Package,
-  Heart,
-  LogOut,
-  Bell,
-} from "lucide-react";
+import { User, Package, Heart, LogOut, Bell } from "lucide-react";
 
 const Account = () => {
-  const {
-    user,
-    isLoggedIn,
-    logout,
-    orders,
-    unreadCount,
-  } = useStore();
+  const { user, isLoggedIn, logout, orders, unreadCount } = useStore();
 
   const router = useRouter();
 
@@ -40,7 +29,7 @@ const Account = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <NavbarWrapper />
 
       <div className="container mx-auto px-4 py-12">
         <h1 className="font-display text-4xl font-bold text-foreground mb-8">
@@ -48,7 +37,6 @@ const Account = () => {
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
           {/* User Card */}
           <div className="bg-card border border-border rounded-xl p-6">
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
@@ -59,9 +47,7 @@ const Account = () => {
               {user?.name}
             </h3>
 
-            <p className="text-sm text-muted-foreground">
-              {user?.email}
-            </p>
+            <p className="text-sm text-muted-foreground">{user?.email}</p>
           </div>
 
           {/* Orders */}
@@ -71,9 +57,7 @@ const Account = () => {
           >
             <Package size={28} className="text-primary mb-4" />
 
-            <h3 className="font-semibold text-foreground">
-              Orders
-            </h3>
+            <h3 className="font-semibold text-foreground">Orders</h3>
 
             <p className="text-sm text-muted-foreground">
               {orders.length} order
@@ -88,13 +72,9 @@ const Account = () => {
           >
             <Heart size={28} className="text-primary mb-4" />
 
-            <h3 className="font-semibold text-foreground">
-              Wishlist
-            </h3>
+            <h3 className="font-semibold text-foreground">Wishlist</h3>
 
-            <p className="text-sm text-muted-foreground">
-              View saved items
-            </p>
+            <p className="text-sm text-muted-foreground">View saved items</p>
           </Link>
 
           {/* Notifications */}
@@ -104,14 +84,10 @@ const Account = () => {
           >
             <Bell size={28} className="text-primary mb-4" />
 
-            <h3 className="font-semibold text-foreground">
-              Notifications
-            </h3>
+            <h3 className="font-semibold text-foreground">Notifications</h3>
 
             <p className="text-sm text-muted-foreground">
-              {unreadCount > 0
-                ? `${unreadCount} unread`
-                : "All caught up"}
+              {unreadCount > 0 ? `${unreadCount} unread` : "All caught up"}
             </p>
 
             {unreadCount > 0 && (

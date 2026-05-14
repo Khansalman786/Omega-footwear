@@ -7,7 +7,8 @@ import { Heart, ShoppingBag, Star, Minus, Plus, Tag } from "lucide-react";
 import { products } from "@/data/products";
 import { useStore } from "@/context/StoreContext";
 import { useRecentlyViewed } from "@/hooks/useRecentlyViewed";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
+
 import Footer from "@/components/Footer";
 import ImageGallery from "@/components/ImageGallery";
 import ProductCard from "@/components/ProductCard";
@@ -46,7 +47,7 @@ const ProductDetailPage = () => {
   if (!product) {
     return (
       <div className="min-h-screen bg-background">
-        <Navbar />
+        <NavbarWrapper />
 
         <div className="container mx-auto px-4 py-20 text-center text-muted-foreground">
           Product not found.
@@ -95,7 +96,7 @@ const ProductDetailPage = () => {
   const categoryHref = `/shop/${slugify(product.category)}`;
 
   const subcategoryHref = `/shop/${slugify(
-    product.category
+    product.category,
   )}/${slugify(product.subcategory)}`;
 
   return (
@@ -112,7 +113,7 @@ const ProductDetailPage = () => {
         }
       />
 
-      <Navbar />
+      <NavbarWrapper />
 
       {/* Breadcrumb */}
       <div className="container mx-auto px-4 py-4">
@@ -190,7 +191,7 @@ const ProductDetailPage = () => {
                     {Math.round(
                       ((product.originalPrice - product.price) /
                         product.originalPrice) *
-                        100
+                        100,
                     )}
                     %
                   </span>
@@ -262,9 +263,7 @@ const ProductDetailPage = () => {
                   <Minus size={16} />
                 </button>
 
-                <span className="px-4 font-medium text-foreground">
-                  {qty}
-                </span>
+                <span className="px-4 font-medium text-foreground">{qty}</span>
 
                 <button
                   onClick={() => setQty(qty + 1)}

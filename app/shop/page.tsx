@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, Suspense } from "react";
 import { useSearchParams, useParams } from "next/navigation";
 
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import ShopFilters, { Filters, defaultFilters } from "@/components/ShopFilters";
@@ -193,7 +193,7 @@ const ShopPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <NavbarWrapper />
 
       <div className="container mx-auto px-4 py-12">
         <Breadcrumbs items={crumbs} className="mb-6" />
@@ -288,4 +288,12 @@ const ShopPage = () => {
   );
 };
 
-export default ShopPage;
+function ShopPageWrapper() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-background" />}>
+      <ShopPage />
+    </Suspense>
+  );
+}
+
+export default ShopPageWrapper;

@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
+
 import Footer from "@/components/Footer";
 import HeroSlider from "./HeroSlider";
 import PromoBanners from "./PromoBanners";
@@ -41,7 +42,7 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
+      <NavbarWrapper />
       {/* <MegaMenu /> */}
       <main>
         <HeroSlider />

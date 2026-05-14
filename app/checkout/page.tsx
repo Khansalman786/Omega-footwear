@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import { useStore, SHIPPING_RATES } from "@/context/StoreContext";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 
 import {
@@ -80,7 +80,7 @@ const Checkout = () => {
   if (cart.length === 0) {
     return (
       <div className="min-h-screen bg-background">
-        <Navbar />
+        <NavbarWrapper />
 
         <div className="container mx-auto px-4 py-20 text-center">
           <p className="text-muted-foreground mb-4">Your cart is empty</p>
@@ -151,7 +151,7 @@ const Checkout = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <NavbarWrapper />
 
       <div className="container mx-auto px-4 py-8">
         <button

@@ -16,7 +16,7 @@ import {
 
 import { useStore, SHIPPING_RATES } from "@/context/StoreContext";
 import { useCurrency } from "@/context/CurrencyContext";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -57,7 +57,7 @@ const Cart = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <NavbarWrapper />
 
       <div className="container mx-auto px-4 py-12">
         <button

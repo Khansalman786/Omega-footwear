@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useStore } from "@/context/StoreContext";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
+
 import { motion } from "framer-motion";
 
 const GoogleIcon = () => (
@@ -39,13 +40,13 @@ const Login = () => {
     e.preventDefault();
     if (!email || !password) return;
     setSubmitting(true);
-     await login(email, password);
+    await login(email, password);
     setSubmitting(false);
   };
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <NavbarWrapper />
       <div className="flex items-center justify-center py-20 px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

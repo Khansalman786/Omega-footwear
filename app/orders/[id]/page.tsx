@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { useStore, SHIPPING_RATES } from "@/context/StoreContext";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
+
 import Footer from "@/components/Footer";
 import {
   Truck,
@@ -49,7 +50,7 @@ const OrderDetail = () => {
   if (!order) {
     return (
       <div className="min-h-screen bg-background">
-        <Navbar />
+        <NavbarWrapper />
 
         <div className="container mx-auto px-4 py-20 text-center">
           <p className="text-muted-foreground mb-4">Order not found</p>
@@ -144,7 +145,7 @@ ${order.trackingNumber ? `Tracking: ${order.trackingNumber}` : ""}
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <NavbarWrapper />
 
       <div className="container mx-auto px-4 py-8">
         <button

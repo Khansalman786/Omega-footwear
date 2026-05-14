@@ -4,7 +4,8 @@ import { useState } from "react";
 import { Gift, Send, CreditCard } from "lucide-react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
+
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 
@@ -40,7 +41,7 @@ const GiftCards = () => {
         title="Gift Cards"
         description="Give the gift of style with Omega Collections gift cards. Available from $25 to $500."
       />
-      <Navbar />
+      <NavbarWrapper />
       <div className="container mx-auto px-4 py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

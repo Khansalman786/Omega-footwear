@@ -1,6 +1,7 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
+
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
@@ -30,7 +31,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <NavbarWrapper />
 
       <section className="relative gradient-navy py-24">
         <div className="container mx-auto px-4 text-center relative z-10">

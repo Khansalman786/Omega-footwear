@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import {
@@ -72,7 +72,7 @@ const openings = [
 
 const Careers = () => (
   <div className="min-h-screen bg-background">
-    <Navbar />
+    <NavbarWrapper />
 
     <section className="relative gradient-navy py-24 md:py-32">
       <div className="container mx-auto px-4 text-center relative z-10">
